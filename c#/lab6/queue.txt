@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+public class Program
+{
+public static void Main()
+{
+Queue<int> q1 = new Queue<int>();
+// 1. Enqueue()
+q1.Enqueue(10);
+q1.Enqueue(20);
+q1.Enqueue(30);
+q1.Enqueue(40);
+Console.WriteLine("Queue:");
+PrintQueue(q1);
+// 2. Dequeue()
+int dequeuedItem = q1.Dequeue();
+Console.WriteLine(dequeuedItem);
+Console.WriteLine("Queue dequeuing an item:");
+PrintQueue(q1);
+// 3. Peek()
+int peekedItem = q1.Peek();
+Console.WriteLine(peekedItem);
+// 4. Contains()
+int itemToFind = 30;
+bool containsItem = q1.Contains(itemToFind);
+Console.WriteLine("\nQueue contains",itemToFind,containsItem);
+itemToFind = 50;
+containsItem = q1.Contains(itemToFind);
+Console.WriteLine("Queue contains ", itemToFind,containsItem);
+	
+q1.Clear();
+Console.WriteLine("\nQueue after clearing all items:");
+PrintQueue(q1);
+}
+public static void PrintQueue(Queue<int> q1)
+{
+if (q1.Count > 0)
+foreach (var i in q1)
+{
+Console.WriteLine(i);
+}
+else
+Console.WriteLine("No Element Found ..");
+}
+}

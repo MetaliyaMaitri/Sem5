@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        //Studentname s1 = new Studentname();
+        //s1.ArrayListMethod();
+        Stack<int> s1 = new Stack<int>();
+        //Push
+        s1.Push(1);
+        s1.Push(2);
+        s1.Push(3);
+        s1.Push(4);
+        Console.WriteLine("Stack");
+        PrintStack(s1);
+        //Pop
+        int popitem = s1.Pop();
+        Console.WriteLine(popitem);
+
+        Console.WriteLine("Pop the number :");
+        PrintStack(s1);
+        // 3. Peek()
+        int topItem = s1.Peek();
+        Console.WriteLine("\nTop Item: {0}", topItem);
+        // 4. Contains()
+        int itemToFind = 30;
+        bool containsItem = s1.Contains(itemToFind);
+        Console.WriteLine("\nStack contains {0}?{1}", itemToFind, containsItem);
+        itemToFind = 50;
+        containsItem = s1.Contains(itemToFind);
+        Console.WriteLine("Stack contains {0}? {1}", itemToFind, containsItem);
+        // 5. Clear()
+        s1.Clear();
+        Console.WriteLine("Stack Clear");
+    }
+    public static void  PrintStack(Stack<int> s1)
+    {
+        foreach (var i in s1)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
